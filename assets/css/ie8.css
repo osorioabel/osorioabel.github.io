@@ -1,27 +1,48 @@
 /*
-	Highlights by HTML5 UP
+	Directive by HTML5 UP
 	html5up.net | @n33co
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
 /* Basic */
 
-	body, html {
-		height: 100%;
+	hr {
+		border-top: solid 1px #cccccc;
 	}
 
-	html {
-		background: none;
+	blockquote {
+		border-left: solid 0.5em #cccccc;
 	}
 
-/* List */
+/* Section/Article */
 
-	ul.actions li {
-		padding: 0 0 0 1em;
+	header.major {
+		border-color: #cccccc;
 	}
 
-		ul.actions li:first-child {
-			padding-left: 0;
+		header.major p {
+			border-top: solid 1px #cccccc;
+		}
+
+	footer.major {
+		border-color: #cccccc;
+	}
+
+/* Button */
+
+	input[type="submit"],
+	input[type="reset"],
+	input[type="button"],
+	.button {
+		position: relative;
+		-ms-behavior: url("assets/js/ie/PIE.htc");
+	}
+
+		input[type="submit"].alt,
+		input[type="reset"].alt,
+		input[type="button"].alt,
+		.button.alt {
+			border: solid 1px #cccccc;
 		}
 
 /* Form */
@@ -31,117 +52,76 @@
 	input[type="email"],
 	select,
 	textarea {
-		border: solid 2px #dddddd;
+		position: relative;
+		border: solid 1px #cccccc;
+		-ms-behavior: url("assets/js/ie/PIE.htc");
+	}
+
+/* Image */
+
+	.image {
+		border: 0;
+		display: inline-block;
 		position: relative;
 	}
 
-	input[type="text"],
-	input[type="password"],
-	input[type="email"] {
-		line-height: 3em;
-	}
-
-	input[type="checkbox"],
-	input[type="radio"] {
-		font-size: 3em;
-	}
-
-		input[type="checkbox"] + label:before,
-		input[type="radio"] + label:before {
+		.image:after {
 			display: none;
 		}
 
-/* Button */
+/* Box */
 
-	input[type="submit"],
-	input[type="reset"],
-	input[type="button"],
-	button,
-	.button {
-		border: solid 2px #dddddd;
+	.box {
+		border: solid 1px #cccccc;
 	}
-
-/* Main BG */
-
-	.main-bg {
-		z-index: 0;
-	}
-
-/* Main */
-
-	.main {
-		background-size: cover;
-	}
-
-		.main .container {
-			background: #fff;
-			border-top: solid 1px #dddddd;
-			position: relative;
-			z-index: 1;
-		}
-
-		.main .goto-next {
-			text-decoration: none;
-		}
-
-			.main .goto-next:before {
-				-moz-osx-font-smoothing: grayscale;
-				-webkit-font-smoothing: antialiased;
-				font-family: FontAwesome;
-				font-style: normal;
-				font-weight: normal;
-				text-transform: none !important;
-			}
-
-			.main .goto-next:before {
-				color: #dddddd;
-				content: '\f063';
-				display: block;
-				font-size: 2em;
-				height: 2em;
-				left: 0;
-				line-height: 2em;
-				position: absolute;
-				text-align: center;
-				text-indent: 0;
-				top: 0;
-				width: 2em;
-			}
 
 /* Header */
 
 	#header {
+		background-image: url("../../images/header.jpg") !important;
+		background-size: cover !important;
+		background-position: scroll !important;
 		-ms-behavior: url("assets/js/ie/backgroundsize.min.htc");
-		background-image: url("../../images/bg.jpg");
-		background-size: cover;
-		height: 100%;
+		padding: 8em 0 !important;
+		color: #ffffff;
 	}
 
-		#header:after {
-			min-height: 100%;
+		#header a {
+			color: inherit;
 		}
 
-		#header header {
+		#header:before {
+			content: '';
+			background-image: url("images/overlay.png");
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			display: block;
+			z-index: 0;
+		}
+
+		#header > * {
 			position: relative;
 			z-index: 1;
 		}
 
-		#header .container {
-			background: #fff;
-			z-index: 1;
+		#header .logo {
+			-ms-behavior: url("assets/js/ie/PIE.htc");
 		}
 
 /* Footer */
 
 	#footer {
-		-ms-behavior: url("assets/js/ie/backgroundsize.min.htc");
-		background-image: url("../../images/bg.jpg");
-		background-size: cover;
+		background-image: none !important;
+		margin-top: 0 !important;
+		padding: 4em 0 !important;
+		color: #ffffff;
 	}
 
-		#footer .container {
-			background: #fff;
-			border-top: solid 1px #dddddd;
-			position: relative;
-			z-index: 1;
-		}
+/* Main */
+
+	#main {
+		padding: 4em 0;
+	}
