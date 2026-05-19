@@ -1,3 +1,5 @@
+import React from "react";
+
 function renderInline(text: string) {
   const parts = text.split(/(`[^`]+`|\*\*[^*]+\*\*)/g);
 
@@ -16,7 +18,7 @@ function renderInline(text: string) {
 
 export default function MarkdownContent({ content }: { content: string }) {
   const lines = content.split("\n");
-  const nodes = [];
+  const nodes: React.ReactNode[] = [];
   let listItems: string[] = [];
 
   function flushList() {

@@ -18,7 +18,7 @@ export const site = {
   location: "Zaragoza, Spain",
   formspreeEndpoint: "https://formspree.io/f/xaqnvgvr",
   description:
-    "Senior Software Developer with 10+ years designing and scaling high-performance iOS applications for global products across 50 countries and 24 languages.",
+    "Senior Software Developer with over a decade of experience designing and scaling high-performance iOS applications for 80M+ global users. Expert in Swift and Objective-C, I specialize in optimizing performance and architecting maintainable, testable systems. From Silicon Valley startups to global brands like adidas, I’ve delivered consumer-validated products across 50 countries, leading cross-functional teams and driving user-centric, scalable solutions.",
   portraitImage,
 };
 
@@ -33,7 +33,7 @@ export const navigation = [
 export const socialLinks = [
   { label: "GitHub", href: "https://github.com/osorioabel", icon: "github" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/osorioabel/", icon: "linkedin" },
-  { label: "Twitter", href: "https://twitter.com/osorioabel", icon: "twitter" },
+  { label: "Twitter", href: "https://twitter.com/osorio_abel", icon: "twitter" },
   { label: "Instagram", href: "https://www.instagram.com/osorioabel/", icon: "instagram" },
 ] as const;
 
