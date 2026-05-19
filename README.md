@@ -19,11 +19,9 @@ npm run dev
 Verify the codebase:
 
 ```sh
-npm run build
-npm audit --omit=dev --audit-level=moderate
+npm run verify
+npm run type-check
 ```
-
-TypeScript linting and formatting tooling should be added after npm registry access is available again. The current verification path keeps the site deployable with the existing lockfile.
 
 ## Content
 
@@ -48,6 +46,10 @@ The contact form is wired to Formspree through `site.formspreeEndpoint` in `src/
 
 ## Deployment
 
+The site is configured for dual-deployment:
+
+### Vercel (Primary)
+
 Deploy the site on Vercel as a static Vite project.
 
 Recommended Vercel settings:
@@ -59,7 +61,13 @@ Output Directory: dist
 Install Command: npm ci
 ```
 
-Recommended DNS records:
+### GitHub Pages (Backup/Mirror)
+
+The site is automatically deployed to GitHub Pages via GitHub Actions when pushing to the `master` branch.
+
+**Note:** In the repository settings under **Pages**, ensure the **Source** is set to **GitHub Actions**.
+
+Recommended DNS records for Vercel:
 
 ```txt
 A      osorioabel.dev   76.76.21.21

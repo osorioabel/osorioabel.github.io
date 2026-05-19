@@ -19,26 +19,33 @@ const postFiles = import.meta.glob<string>("./posts/*.md", {
 });
 
 function parseFrontmatter(source: string): BlogPost {
-  const match = source.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+  const match = source.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
 
   if (!match) {
-    throw new Error("Blog post is missing frontmatter.");
+    throw new Error("Blog post is missing frontmatter or has an invalid format.");
   }
 
   const [, frontmatter, content] = match;
-  const entries = frontmatter.split("\n").map((line) => {
-    const separatorIndex = line.indexOf(":");
-    return [line.slice(0, separatorIndex).trim(), line.slice(separatorIndex + 1).trim()];
-  });
+  const entries = frontmatter
+    .split(/\r?\n/)
+    .filter((line) => line.includes(":"))
+    .map((line) => {
+      const separatorIndex = line.indexOf(":");
+      return [line.slice(0, separatorIndex).trim(), line.slice(separatorIndex + 1).trim()];
+    });
 
   const meta = Object.fromEntries(entries) as Record<string, string>;
   const words = content.trim().split(/\s+/).filter(Boolean).length;
 
+  if (!meta.title || !meta.slug || !meta.date) {
+    throw new Error(`Blog post is missing required metadata (title, slug, or date). Found: ${Object.keys(meta).join(", ")}`);
+  }
+
   return {
     title: meta.title,
     date: meta.date,
-    description: meta.description,
-    tags: meta.tags.split(",").map((tag) => tag.trim()),
+    description: meta.description || "",
+    tags: (meta.tags || "").split(",").map((tag) => tag.trim()).filter(Boolean),
     slug: meta.slug,
     published: meta.published === "true",
     content: content.trim(),
