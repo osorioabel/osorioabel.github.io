@@ -23,6 +23,8 @@ npm run verify
 npm run type-check
 ```
 
+`npm run build` suppresses Node warning `DEP0205` because the current Tailwind CSS compiler still calls Node's deprecated `module.register()` API on newer Node runtimes. The project pins Node 22 for deployment; remove this suppression after Tailwind replaces that internal call.
+
 ## Content
 
 Site profile, services, projects, experience, and social links live in `src/content/site.ts`.
@@ -66,6 +68,8 @@ Install Command: npm ci
 The site is automatically deployed to GitHub Pages via GitHub Actions when pushing to the `master` branch.
 
 **Note:** In the repository settings under **Pages**, ensure the **Source** is set to **GitHub Actions**.
+
+The Pages deployment workflow runs type checking and the production build before publishing `dist/`. The production dependency audit runs as a separate job so transient npm audit availability does not block publishing a successfully built static site.
 
 Recommended DNS records for Vercel:
 
