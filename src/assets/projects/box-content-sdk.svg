@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" role="img" aria-labelledby="title desc">
+  <title id="title">Box Content SDK preview</title>
+  <desc id="desc">A custom illustration of API integration and cloud content folders.</desc>
+  <rect width="960" height="640" fill="#7e74f1"/>
+  <rect x="80" y="72" width="800" height="496" rx="36" fill="#f5f3fe"/>
+  <rect x="142" y="154" width="282" height="104" rx="24" fill="#e9e6ff"/>
+  <path d="M166 184h116l26 24h92v24H166v-48Z" fill="#7e74f1"/>
+  <rect x="142" y="300" width="282" height="104" rx="24" fill="#e9e6ff"/>
+  <path d="M166 330h116l26 24h92v24H166v-48Z" fill="#7e74f1"/>
+  <rect x="530" y="156" width="286" height="252" rx="30" fill="#7e74f1"/>
+  <text x="574" y="220" fill="#ffffff" font-family="Arial, sans-serif" font-size="28" font-weight="700">API</text>
+  <path d="M582 284h182M582 326h128" stroke="#e9e6ff" stroke-width="16" stroke-linecap="round"/>
+  <text x="142" y="520" fill="#7e74f1" font-family="Arial, sans-serif" font-size="30" font-weight="700">Content SDK architecture</text>
+</svg>

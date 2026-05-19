@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" role="img" aria-labelledby="title desc">
+  <title id="title">Cancergraph symptom tracking preview</title>
+  <desc id="desc">A custom illustration of healthcare symptom tracking and reports.</desc>
+  <rect width="960" height="640" fill="#7e74f1"/>
+  <rect x="80" y="72" width="800" height="496" rx="36" fill="#f5f3fe"/>
+  <rect x="142" y="132" width="314" height="386" rx="32" fill="#ffffff"/>
+  <text x="182" y="194" fill="#7e74f1" font-family="Arial, sans-serif" font-size="28" font-weight="700">Symptoms</text>
+  <path d="M184 260h210M184 326h170M184 392h232" stroke="#e9e6ff" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="382" cy="260" r="18" fill="#7e74f1"/>
+  <circle cx="342" cy="326" r="18" fill="#7e74f1"/>
+  <circle cx="416" cy="392" r="18" fill="#7e74f1"/>
+  <rect x="542" y="158" width="264" height="280" rx="28" fill="#7e74f1"/>
+  <path d="M590 356c32-70 64-34 92-92 24 82 60 32 84 112" fill="none" stroke="#ffffff" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="142" y="552" fill="#7e74f1" font-family="Arial, sans-serif" font-size="30" font-weight="700">Health data and reports</text>
+</svg>
