@@ -33,7 +33,7 @@ export const navigation = [
 export const socialLinks = [
   { label: "GitHub", href: "https://github.com/osorioabel", icon: "github" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/osorioabel/", icon: "linkedin" },
-  { label: "Twitter", href: "https://twitter.com/osorioabel", icon: "twitter" },
+  { label: "Twitter", href: "https://twitter.com/osorio_abel", icon: "twitter" },
   { label: "Instagram", href: "https://www.instagram.com/osorioabel/", icon: "instagram" },
 ] as const;
 
