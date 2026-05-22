@@ -19,24 +19,26 @@ function renderInline(text: string) {
 export default function MarkdownContent({ content }: { content: string }) {
   const lines = content.split("\n");
   const nodes: React.ReactNode[] = [];
-  let listItems: string[] = [];
+  let listItems: Array<{ item: string; lineIndex: number }> = [];
 
   function flushList() {
     if (listItems.length === 0) {
       return;
     }
 
+    const listStartIndex = listItems[0]?.lineIndex ?? nodes.length;
+
     nodes.push(
-      <ul key={`list-${nodes.length}`} className="space-y-2">
-        {listItems.map((item) => (
-          <li key={item}>{renderInline(item)}</li>
+      <ul key={`list-${listStartIndex}`} className="space-y-2">
+        {listItems.map(({ item, lineIndex }) => (
+          <li key={`list-item-${lineIndex}`}>{renderInline(item)}</li>
         ))}
       </ul>,
     );
     listItems = [];
   }
 
-  lines.forEach((line) => {
+  lines.forEach((line, lineIndex) => {
     if (!line.trim()) {
       flushList();
       return;
@@ -45,7 +47,7 @@ export default function MarkdownContent({ content }: { content: string }) {
     if (line.startsWith("## ")) {
       flushList();
       nodes.push(
-        <h2 key={line} className="pt-6 text-2xl font-semibold text-slate-950">
+        <h2 key={`heading-2-${lineIndex}`} className="pt-6 text-2xl font-semibold text-slate-950">
           {renderInline(line.slice(3))}
         </h2>,
       );
@@ -55,7 +57,7 @@ export default function MarkdownContent({ content }: { content: string }) {
     if (line.startsWith("# ")) {
       flushList();
       nodes.push(
-        <h1 key={line} className="text-4xl font-bold tracking-tight text-slate-950">
+        <h1 key={`heading-1-${lineIndex}`} className="text-4xl font-bold tracking-tight text-slate-950">
           {renderInline(line.slice(2))}
         </h1>,
       );
@@ -63,13 +65,13 @@ export default function MarkdownContent({ content }: { content: string }) {
     }
 
     if (line.startsWith("- ")) {
-      listItems.push(line.slice(2));
+      listItems.push({ item: line.slice(2), lineIndex });
       return;
     }
 
     flushList();
     nodes.push(
-      <p key={line} className="text-base leading-8 text-slate-700">
+      <p key={`paragraph-${lineIndex}`} className="text-base leading-8 text-slate-700">
         {renderInline(line)}
       </p>,
     );

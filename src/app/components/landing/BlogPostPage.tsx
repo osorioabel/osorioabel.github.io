@@ -10,7 +10,7 @@ export default function BlogPostPage({ post }: { post: BlogPost }) {
       <main className="px-6 py-16 md:px-12 md:py-24 lg:px-20">
         <article className="mx-auto max-w-4xl">
           <a
-            href="/#blog"
+            href="#blog"
             className="mb-10 inline-flex text-sm font-semibold text-brand transition-colors hover:text-brand-dark"
           >
             Back to writing
